@@ -5,7 +5,7 @@ const cad = document.querySelector('.cad-price');
 const gallons = document.querySelector('.gallons');
 const us = document.querySelector('.us-price');
 const p = document.querySelector('#end')
-
+let conv = 0
 //object to push the user inputs into
 const formData = {};
 //for loop to iterate through the possible input entries and add to the formData
@@ -18,20 +18,26 @@ for (let input of [ gallons, cad, us ]) {
 btn.addEventListener('click', function () {
   const gToL = formData.usGallon * 3.78541;
   const canPrice = formData.canAmount * gToL;
-  const usPrice = formData.usGallon * formData.usAmount * 1.34;
+  const usPrice = formData.usGallon * formData.usAmount * conv;
+  console.log(conv)
   //create h3 and append to present the price in CAD
   const h3 = document.createElement('h3');
   const secondH3 = document.createElement('h3');
   p.append(h3, secondH3);
   h3.innerText = `the canadian price for the gas is ${canPrice}`;
   secondH3.innerText = `the price of gas in canadian if purchased in usa ${usPrice}`;
-
-
-  
 })
+// using axios to fetch daily currency to convert gas price more precisely
+let x = 0
+axios.get("https://v6.exchangerate-api.com/v6/73654e15fd563ea02a2938f6/latest/USD")
+  .then(({data}) => {
+    x = data.conversion_rates.CAD  
+  console.log(x)
+  })
+  .catch(error => console.log('error', error));
 
 
-// //to do 
-// -make the h3 elemnts add after the button instead of appending. 
+  // //to do 
+// make obj.result into variable and use it to multiply usPrice
 // -posisbly make convert button disapear?
 // -inport api to monitor live cad to usd conversion 

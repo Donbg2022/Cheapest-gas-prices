@@ -2,13 +2,21 @@
     margin: 0;
     padding: 0;
     text-align: center;
+    background-color: rgba(143, 188, 143, 0.988);
 }
 p{
     margin: 20px;
 }
 .convert{
     margin-top: 20px;
-}
-.inputs{
+    background-color: white;
+    border-radius: 5px;
     
+    padding: 10px;
+}
+.gas{
+    background-color: white;
+    border: 0;
+    border-radius: 4px;
+    padding: 10px;
 }

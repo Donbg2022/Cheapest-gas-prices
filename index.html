@@ -14,16 +14,16 @@
 <!--inputs to accept amount of gallons gas prices in canada and gas prices in usa-->
     <div class="inputs">
         <p>
-            <label id="gallon-input">Gallons purchased</label>
-            <input name="usGallon" class="gallons" type="number" placeholder="12">
+            <label id="gallons">Gallons purchased</label>
+            <input name="usGallon" class="gas" type="number" placeholder="12" min="1">
         </p>
         <p>
-            <label id="cad-gas-price">Canadian Gas Price</label>
-            <input name="canAmount" class="cad-price" type="number" placeholder="2.20">
+            <label id="cad-price">Canadian Gas Price</label>
+            <input name="canAmount" class="gas" type="number" placeholder="2.20" min="1">
         </p>
         <p>
-            <label id="us-gas-price">American Gas Price</label>
-            <input name="usAmount"class="us-price" type="number" placeholder="5.45">
+            <label id="us-price">American Gas Price</label>
+            <input name="usAmount"class="gas" type="number" placeholder="5.45" min="1">
         </p>
         <button class="convert">Convert</button>
     </div>
